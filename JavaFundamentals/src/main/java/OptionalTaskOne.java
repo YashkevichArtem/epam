@@ -3,32 +3,34 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class OptionalTaskOne {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         while (true) {
-            System.out.println("Введите число и нажмите Enter. Если желаете окончить поиск, оставьте поле пустым и нажмите Enter.");
+            System.out.println("Введите положительное, целочисленное число и нажмите Enter. " +
+                    "Если желаете окончить поиск, оставьте поле пустым и нажмите Enter.");
             String s = reader.readLine();
-            if (s.isEmpty()) break;
-            int toInt = Integer.parseInt(s);
+            if (s.isEmpty()){
+                break;
+            }
+            try {
+                int toInt = Integer.parseInt(s);
+                list.add(toInt);
+            }catch (Exception e){
+                System.out.println("Ошибка! Требуется положительное и целочисленное число.");
+            }
 
-            list.add(toInt);
         }
 
         Collections.sort(list);
 
-        int longNumber = list.get(0);
         int shortNumber = list.get(0);
-        for (Integer integer : list) {
-            if (integer >= longNumber) {
-                longNumber = integer;
-            } else {
-                shortNumber = integer;
-            }
-        }
+        int longNumber = list.get(list.size() - 1);
+
         String longNumberLength = Integer.toString(longNumber);
         String shortNumberLength = Integer.toString(shortNumber);
         System.out.println("Самое короткое и маленькое число: " + shortNumber + ". Это " + shortNumberLength.length() + " значное число." );
