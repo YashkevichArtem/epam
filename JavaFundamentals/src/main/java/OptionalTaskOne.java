@@ -23,13 +23,20 @@ public class OptionalTaskOne {
             }catch (Exception e){
                 System.out.println("Ошибка! Требуется положительное и целочисленное число.");
             }
+        }
 
+        if(list.isEmpty()){
+            System.out.println("Требуется ввод хотя бы одного числа!");
+            return;
         }
 
         Collections.sort(list);
 
         int shortNumber = list.get(0);
         int longNumber = list.get(list.size() - 1);
+
+
+
 
         String longNumberLength = Integer.toString(longNumber);
         String shortNumberLength = Integer.toString(shortNumber);
