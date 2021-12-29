@@ -56,9 +56,7 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getFaculty() {
-        return faculty;
-    }
+    public String getFaculty() {return faculty;}
 
     public void setFaculty(String faculty) {
         this.faculty = faculty;
