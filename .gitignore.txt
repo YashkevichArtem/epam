@@ -1,7 +1,4 @@
 *.db
 *.log
 target/
-bin/
 out
-.idea
-*.xml
