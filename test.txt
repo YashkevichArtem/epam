@@ -1,0 +1,8 @@
+D:\epam
+test1 	 - 	 folder
+	 song1.txt 	 - 	 file
+	 song2.txt 	 - 	 file
+test2 	 - 	 folder
+	 song2.txt 	 - 	 file
+test3 	 - 	 folder
+	 song3.txt 	 - 	 file
